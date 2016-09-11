@@ -32,11 +32,11 @@ add.apply(optimus,[20,30]);
 
 // #4
 
-function calculate(bender){
+var calculate= add.bind(bender);
+calculate('drinking','beer');
 
-  add.bind('drinking','beer');
-}
+console.log(calculate('drinking ','beer'));
 
-var calculate= add.bind(bender,'drinking ','beer');
-
-console.log(calculate());
+/*While in the end you produced the correct result --
+however documents say to bind add to calculate then invoke calculate with the arguments drinking and beer.
+You should not be hardcoding values or arguments when you bind to other objects.*/
