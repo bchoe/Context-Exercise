@@ -1,7 +1,7 @@
 var Robot = function (name) {
   this.name = name;
 
-}
+};
 
 function add ( op1, op2 ) {
   this.name = this.name || "Humans";
@@ -17,14 +17,26 @@ var wall_e = new Robot("Wall-E");
 
 
 // #1
-console.log(  );
+console.log('invoke add: ',add(0,1) ); //invoke add
+add(0,1);
 
-// #2  
-console.log(  );
+// #2
+console.log('invoke add.call: ',add.call(voltron,2,3));
+
+add.call(voltron,2,3);
+
 
 // #3
-console.log(  );
+console.log('invoke add.apply: ',add.apply(optimus,[20,30]) );
+add.apply(optimus,[20,30]);
 
 // #4
 
-console.log(  );
+function calculate(bender){
+
+  add.bind('drinking','beer');
+}
+
+var calculate= add.bind(bender,'drinking ','beer');
+
+console.log(calculate());
